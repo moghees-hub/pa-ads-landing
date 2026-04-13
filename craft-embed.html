@@ -141,18 +141,28 @@ body .content-wrapper * {
 .pa-ads-landing .program h2{font-size:clamp(24px,4vw,40px);font-weight:900;letter-spacing:-.025em;text-align:center;line-height:1.15;color:var(--text)}
 .pa-ads-landing .program h2 em{font-style:normal;color:var(--green)}
 .pa-ads-landing .program__subtitle{text-align:center;font-size:15px;color:#000;font-weight:700;margin-top:14px;max-width:700px;margin-left:auto;margin-right:auto;line-height:1.7}
-.pa-ads-landing .program__phases{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px}
-.pa-ads-landing .phase-card{background:var(--light);border:1px solid var(--border);border-radius:16px;padding:32px 28px;text-align:left;transition:transform .3s,box-shadow .3s}
-.pa-ads-landing .phase-card:hover{transform:translateY(-4px);box-shadow:0 12px 36px rgba(0,0,0,0.06)}
-.pa-ads-landing .phase-card__header{display:flex;align-items:center;gap:12px;margin-bottom:16px}
-.pa-ads-landing .phase-card__num{font-size:32px;font-weight:900;color:var(--green);letter-spacing:-.02em}
-.pa-ads-landing .phase-card__tag{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--text-secondary);background:var(--white);border:1px solid var(--border);padding:4px 12px;border-radius:20px}
-.pa-ads-landing .phase-card h3{font-size:20px;font-weight:900;color:var(--text);margin-bottom:14px;line-height:1.2}
-.pa-ads-landing .phase-card h3 em{font-style:normal;color:var(--green)}
-.pa-ads-landing .phase-card p{font-size:14px;color:var(--text-secondary);line-height:1.7;margin-bottom:12px}
-.pa-ads-landing .phase-card__stats{display:flex;flex-direction:column;gap:8px;margin-top:20px;padding-top:20px;border-top:1px solid var(--border)}
-.pa-ads-landing .phase-card__stats div{font-size:13px;color:var(--text-secondary)}
-.pa-ads-landing .phase-card__stats strong{color:var(--green);font-weight:800;margin-right:6px}
+/* PHASE ACCORDION */
+.pa-ads-landing .phase-accordion{display:flex;gap:10px;margin-top:40px;min-height:440px;align-items:stretch}
+.pa-ads-landing .phase-item{background:var(--light);border:1px solid var(--border);border-radius:16px;overflow:hidden;cursor:pointer;flex:0 0 58px;transition:flex 0.45s cubic-bezier(0.4,0,0.2,1);position:relative}
+.pa-ads-landing .phase-item.active{flex:1;cursor:default}
+.pa-ads-landing .phase-item:hover:not(.active){background:#eef0f3;border-color:#d0d5dd}
+.pa-ads-landing .phase-tab{display:flex;flex-direction:column;align-items:center;padding:24px 0;gap:14px;height:100%}
+.pa-ads-landing .phase-item.active .phase-tab{display:none}
+.pa-ads-landing .phase-tab__num{font-size:26px;font-weight:900;color:var(--green)}
+.pa-ads-landing .phase-tab__title{writing-mode:vertical-rl;transform:rotate(180deg);font-size:12px;font-weight:800;color:var(--text);white-space:nowrap}
+.pa-ads-landing .phase-tab__hint{position:absolute;bottom:18px;writing-mode:vertical-rl;transform:rotate(180deg);font-size:9px;color:var(--gray);white-space:nowrap;letter-spacing:0.06em;text-transform:uppercase}
+.pa-ads-landing .phase-content{display:none;padding:32px 28px;animation:phaseIn 0.3s ease forwards}
+.pa-ads-landing .phase-item.active .phase-content{display:block}
+@keyframes phaseIn{from{opacity:0;transform:translateX(12px)}to{opacity:1;transform:none}}
+.pa-ads-landing .phase-content__header{display:flex;align-items:center;gap:12px;margin-bottom:16px}
+.pa-ads-landing .phase-content__num{font-size:32px;font-weight:900;color:var(--green);letter-spacing:-.02em}
+.pa-ads-landing .phase-content__tag{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--text-secondary);background:var(--white);border:1px solid var(--border);padding:4px 12px;border-radius:20px}
+.pa-ads-landing .phase-content h3{font-size:20px;font-weight:900;color:var(--text);margin-bottom:14px;line-height:1.2}
+.pa-ads-landing .phase-content h3 em{font-style:normal;color:var(--green)}
+.pa-ads-landing .phase-content p{font-size:14px;color:var(--text-secondary);line-height:1.7;margin-bottom:12px}
+.pa-ads-landing .phase-stats{display:flex;flex-direction:column;gap:8px;margin-top:20px;padding-top:20px;border-top:1px solid var(--border)}
+.pa-ads-landing .phase-stats div{font-size:13px;color:var(--text-secondary)}
+.pa-ads-landing .phase-stats strong{color:var(--green);font-weight:800;margin-right:6px}
 .pa-ads-landing .program__endnote{text-align:center;font-size:18px;font-weight:700;color:var(--text);margin-top:40px}
 .pa-ads-landing .program__endnote em{font-style:normal;color:var(--green)}
 
@@ -217,7 +227,15 @@ body .content-wrapper * {
   .pa-ads-landing .excuses h2{font-size:clamp(20px,5vw,30px);padding:0 10px}
   .pa-ads-landing .program h2{font-size:clamp(20px,5vw,30px);padding:0 10px}
   .pa-ads-landing .guarantee h2{font-size:clamp(20px,5vw,30px);padding:0 10px;white-space:normal!important}
-  .pa-ads-landing .program__phases{grid-template-columns:1fr}
+  .pa-ads-landing .phase-accordion{flex-direction:column;min-height:auto;gap:8px}
+  .pa-ads-landing .phase-item{flex:none !important;width:100%}
+  .pa-ads-landing .phase-tab{flex-direction:row;height:auto;padding:16px 20px;gap:12px;align-items:center}
+  .pa-ads-landing .phase-item.active .phase-tab{display:flex;border-bottom:1px solid var(--border)}
+  .pa-ads-landing .phase-tab__title{writing-mode:horizontal-tb;transform:none;font-size:14px}
+  .pa-ads-landing .phase-tab__num{font-size:22px}
+  .pa-ads-landing .phase-tab__hint{position:static;writing-mode:horizontal-tb;transform:none;margin-left:auto;font-size:10px}
+  .pa-ads-landing .phase-item.active .phase-tab__hint{display:none}
+  .pa-ads-landing .phase-content{padding:20px}
   .pa-ads-landing .excuse-grid{grid-template-columns:1fr}
   .pa-ads-landing .testi-scroll{grid-template-columns:repeat(2,1fr);gap:12px;padding:32px 15px 15px}
   .pa-ads-landing .testi-card{min-width:0}
@@ -355,47 +373,68 @@ body .content-wrapper * {
   <div class="program">
     <div class="container" data-reveal>
       <h2>A <em>Three-Phase</em> Approach That Demands <br>Commitment And Delivers Results.</h2>
-      <div class="program__phases">
-        <div class="phase-card">
-          <div class="phase-card__header">
-            <span class="phase-card__num">01</span>
-            <span class="phase-card__tag">The Starting Point</span>
+      <div class="phase-accordion">
+        <div class="phase-item" onclick="togglePAPhase(this)">
+          <div class="phase-tab">
+            <span class="phase-tab__num">01</span>
+            <span class="phase-tab__title">Rapid Fat Loss &amp; Foundation</span>
+            <span class="phase-tab__hint">Click to open</span>
           </div>
-          <h3>Rapid Fat Loss &amp; <em>Foundation</em></h3>
-          <p>Phase 1 focuses on rapid, controlled fat loss while establishing the foundations for long-term success. Get you to roughly 10–12% body fat, the kind of shape where you look like you belong on the cover of a magazine.</p>
-          <p>Phase 1 exists to shatter limiting beliefs, prove what consistency can do, and show you what you can achieve when the strategy is correct. This is where results happen fast, executed intelligently and safely.</p>
-          <div class="phase-card__stats">
-            <div><strong>10–12%</strong> Target Body Fat</div>
-            <div><strong>1000s</strong> Men Transformed</div>
-            <div><strong>100%</strong> Intelligent Execution</div>
-          </div>
-        </div>
-        <div class="phase-card">
-          <div class="phase-card__header">
-            <span class="phase-card__num">02</span>
-            <span class="phase-card__tag">Sustainability And Control</span>
-          </div>
-          <h3>Reverse Diet &amp; Metabolic <em>Reset</em></h3>
-          <p>This is where fat loss stops being temporary and becomes a permanent part of your lifestyle. Phase 2 prevents rebound weight gain and turns short term progress into a stable, repeatable outcome.</p>
-          <p>This phase builds confidence around eating, training, and long term bodyweight management. Calories are increased strategically to restore metabolic function, improve energy levels, and maintain the physique achieved in Phase 1.</p>
-          <div class="phase-card__stats">
-            <div><strong>0%</strong> Rebound Tolerance</div>
-            <div><strong>&#8593;</strong> Metabolic Function</div>
-            <div><strong>&#8734;</strong> Long-Term Control</div>
+          <div class="phase-content" onclick="event.stopPropagation()">
+            <div class="phase-content__header">
+              <span class="phase-content__num">01</span>
+              <span class="phase-content__tag">The Starting Point</span>
+            </div>
+            <h3>Rapid Fat Loss &amp; <em>Foundation</em></h3>
+            <p>Phase 1 focuses on rapid, controlled fat loss while establishing the foundations for long-term success. Get you to roughly 10–12% body fat, the kind of shape where you look like you belong on the cover of a magazine.</p>
+            <p>Phase 1 exists to shatter limiting beliefs, prove what consistency can do, and show you what you can achieve when the strategy is correct. This is where results happen fast, executed intelligently and safely.</p>
+            <div class="phase-stats">
+              <div><strong>10–12%</strong> Target Body Fat</div>
+              <div><strong>1000s</strong> Men Transformed</div>
+              <div><strong>100%</strong> Intelligent Execution</div>
+            </div>
           </div>
         </div>
-        <div class="phase-card">
-          <div class="phase-card__header">
-            <span class="phase-card__num">03</span>
-            <span class="phase-card__tag">Progression Beyond Fat Loss</span>
+        <div class="phase-item" onclick="togglePAPhase(this)">
+          <div class="phase-tab">
+            <span class="phase-tab__num">02</span>
+            <span class="phase-tab__title">Reverse Diet &amp; Metabolic Reset</span>
+            <span class="phase-tab__hint">Click to open</span>
           </div>
-          <h3>Build, Perform &amp; <em>Solidify</em></h3>
-          <p>This is where fat loss evolves into strength, performance, and long-term physical capability. Build muscle, increase strength, and pursue specific performance goals, physique, endurance, or sport-based, depending on the individual.</p>
-          <p>Phase 3 solidifies habits, reinforces structure, and establishes a long term standard for training and lifestyle. The outcome is not just improved performance, but the ability to sustain it independently.</p>
-          <div class="phase-card__stats">
-            <div><strong>&#8593;</strong> Muscle &amp; Strength</div>
-            <div><strong>&#9733;</strong> Performance Goals</div>
-            <div><strong>&#10003;</strong> Independent Sustainability</div>
+          <div class="phase-content" onclick="event.stopPropagation()">
+            <div class="phase-content__header">
+              <span class="phase-content__num">02</span>
+              <span class="phase-content__tag">Sustainability And Control</span>
+            </div>
+            <h3>Reverse Diet &amp; Metabolic <em>Reset</em></h3>
+            <p>This is where fat loss stops being temporary and becomes a permanent part of your lifestyle. Phase 2 prevents rebound weight gain and turns short term progress into a stable, repeatable outcome.</p>
+            <p>This phase builds confidence around eating, training, and long term bodyweight management. Calories are increased strategically to restore metabolic function, improve energy levels, and maintain the physique achieved in Phase 1.</p>
+            <div class="phase-stats">
+              <div><strong>0%</strong> Rebound Tolerance</div>
+              <div><strong>&#8593;</strong> Metabolic Function</div>
+              <div><strong>&#8734;</strong> Long-Term Control</div>
+            </div>
+          </div>
+        </div>
+        <div class="phase-item" onclick="togglePAPhase(this)">
+          <div class="phase-tab">
+            <span class="phase-tab__num">03</span>
+            <span class="phase-tab__title">Build, Perform &amp; Solidify</span>
+            <span class="phase-tab__hint">Click to open</span>
+          </div>
+          <div class="phase-content" onclick="event.stopPropagation()">
+            <div class="phase-content__header">
+              <span class="phase-content__num">03</span>
+              <span class="phase-content__tag">Progression Beyond Fat Loss</span>
+            </div>
+            <h3>Build, Perform &amp; <em>Solidify</em></h3>
+            <p>This is where fat loss evolves into strength, performance, and long-term physical capability. Build muscle, increase strength, and pursue specific performance goals, physique, endurance, or sport-based, depending on the individual.</p>
+            <p>Phase 3 solidifies habits, reinforces structure, and establishes a long term standard for training and lifestyle. The outcome is not just improved performance, but the ability to sustain it independently.</p>
+            <div class="phase-stats">
+              <div><strong>&#8593;</strong> Muscle &amp; Strength</div>
+              <div><strong>&#9733;</strong> Performance Goals</div>
+              <div><strong>&#10003;</strong> Independent Sustainability</div>
+            </div>
           </div>
         </div>
       </div>
@@ -526,6 +565,9 @@ body .content-wrapper * {
 function openPAAdsBookingModal(){document.getElementById('pa-ads-bookingModal').classList.add('active');document.body.style.overflow='hidden'}
 function closePAAdsBookingModal(){document.getElementById('pa-ads-bookingModal').classList.remove('active');document.body.style.overflow=''}
 window.openPAAdsBookingModal=openPAAdsBookingModal;
+window.togglePAPhase=function(el){const items=el.closest('.phase-accordion').querySelectorAll('.phase-item');const wasActive=el.classList.contains('active');items.forEach(i=>i.classList.remove('active'));if(!wasActive)el.classList.add('active')};
+// Auto-open first phase
+const paFirstPhase=document.querySelector('.pa-ads-landing .phase-item');if(paFirstPhase)paFirstPhase.classList.add('active');
 window.closePAAdsBookingModal=closePAAdsBookingModal;
 document.getElementById('pa-ads-bookingModal').addEventListener('click',function(e){if(e.target===this)closePAAdsBookingModal()});
 
