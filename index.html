@@ -99,9 +99,9 @@ body{background:var(--white);color:var(--text);font-family:'Inter',sans-serif;fo
 .guarantee p{font-size:15px;color:#000;font-weight:700;margin-top:16px;line-height:1.7}
 
 /* PROGRAM SECTION */
-.program{background:var(--white);padding:36px 0 16px}
+.program{background:var(--black);padding:36px 0 16px}
 .program .container{max-width:1000px;margin:0 auto;padding:0 20px}
-.program h2{font-size:clamp(24px,4vw,40px);font-weight:900;letter-spacing:-.025em;text-align:center;line-height:1.15;color:var(--text)}
+.program h2{font-size:clamp(24px,4vw,40px);font-weight:900;letter-spacing:-.025em;text-align:center;line-height:1.15;color:var(--white)}
 .program h2 em{font-style:normal;color:var(--green)}
 .program__subtitle{text-align:center;font-size:15px;color:#000;font-weight:700;margin-top:14px;max-width:700px;margin-left:auto;margin-right:auto;line-height:1.7}
 .program__phases{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px}
@@ -117,27 +117,27 @@ body{background:var(--white);color:var(--text);font-family:'Inter',sans-serif;fo
 .phase-card__stats div{font-size:13px;color:var(--text-secondary)}
 .phase-card__stats strong{color:var(--green);font-weight:800;margin-right:6px}
 .phase-accordion{display:flex;gap:10px;margin-top:40px;min-height:440px;align-items:stretch}
-.phase-item{background:var(--light);border:1px solid var(--border);border-radius:16px;overflow:hidden;cursor:pointer;flex:0 0 58px;transition:flex 0.45s cubic-bezier(0.4,0,0.2,1);position:relative}
+.phase-item{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:16px;overflow:hidden;cursor:pointer;flex:0 0 58px;transition:flex 0.45s cubic-bezier(0.4,0,0.2,1);position:relative}
 .phase-item.active{flex:1;cursor:default}
-.phase-item:hover:not(.active){background:#eef0f3;border-color:#d0d5dd}
+.phase-item:hover:not(.active){background:rgba(255,255,255,0.1);border-color:rgba(255,255,255,0.2)}
 .phase-tab{display:flex;flex-direction:column;align-items:center;padding:24px 0;gap:14px;height:100%}
 .phase-item.active .phase-tab{display:none}
 .phase-tab__num{font-size:26px;font-weight:900;color:var(--green)}
-.phase-tab__title{writing-mode:vertical-rl;transform:rotate(180deg);font-size:12px;font-weight:800;color:var(--text);white-space:nowrap}
+.phase-tab__title{writing-mode:vertical-rl;transform:rotate(180deg);font-size:12px;font-weight:800;color:var(--white);white-space:nowrap}
 .phase-tab__hint{position:absolute;bottom:18px;writing-mode:vertical-rl;transform:rotate(180deg);font-size:9px;color:var(--gray);white-space:nowrap;letter-spacing:0.06em;text-transform:uppercase}
 .phase-content{display:none;padding:32px 28px;animation:phaseIn 0.3s ease forwards}
 .phase-item.active .phase-content{display:block}
 @keyframes phaseIn{from{opacity:0;transform:translateX(12px)}to{opacity:1;transform:none}}
 .phase-content__header{display:flex;align-items:center;gap:12px;margin-bottom:16px}
 .phase-content__num{font-size:32px;font-weight:900;color:var(--green);letter-spacing:-.02em}
-.phase-content__tag{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--text-secondary);background:var(--white);border:1px solid var(--border);padding:4px 12px;border-radius:20px}
-.phase-content h3{font-size:20px;font-weight:900;color:var(--text);margin-bottom:14px;line-height:1.2}
+.phase-content__tag{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:rgba(255,255,255,0.7);background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);padding:4px 12px;border-radius:20px}
+.phase-content h3{font-size:20px;font-weight:900;color:var(--white);margin-bottom:14px;line-height:1.2}
 .phase-content h3 em{font-style:normal;color:var(--green)}
-.phase-content p{font-size:14px;color:var(--text-secondary);line-height:1.7;margin-bottom:12px}
-.phase-stats{display:flex;flex-direction:column;gap:8px;margin-top:20px;padding-top:20px;border-top:1px solid var(--border)}
-.phase-stats div{font-size:13px;color:var(--text-secondary)}
+.phase-content p{font-size:14px;color:rgba(255,255,255,0.7);line-height:1.7;margin-bottom:12px}
+.phase-stats{display:flex;flex-direction:column;gap:8px;margin-top:20px;padding-top:20px;border-top:1px solid rgba(255,255,255,0.1)}
+.phase-stats div{font-size:13px;color:rgba(255,255,255,0.7)}
 .phase-stats strong{color:var(--green);font-weight:800;margin-right:6px}
-.program__endnote{text-align:center;font-size:18px;font-weight:700;color:var(--text);margin-top:40px}
+.program__endnote{text-align:center;font-size:18px;font-weight:700;color:var(--white);margin-top:40px}
 .program__endnote em{font-style:normal;color:var(--green)}
 
 
@@ -258,7 +258,7 @@ body{background:var(--white);color:var(--text);font-family:'Inter',sans-serif;fo
   .phase-accordion{flex-direction:column;min-height:auto;gap:8px}
   .phase-item{flex:none !important;width:100%}
   .phase-tab{flex-direction:row;height:auto;padding:16px 20px;gap:12px;align-items:center}
-  .phase-item.active .phase-tab{display:flex;border-bottom:1px solid var(--border)}
+  .phase-item.active .phase-tab{display:flex;border-bottom:1px solid rgba(255,255,255,0.1)}
   .phase-tab__title{writing-mode:horizontal-tb;transform:none;font-size:14px}
   .phase-tab__num{font-size:22px}
   .phase-tab__hint{position:static;writing-mode:horizontal-tb;transform:none;margin-left:auto;font-size:10px}
