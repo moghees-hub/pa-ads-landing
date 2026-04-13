@@ -565,7 +565,7 @@ function closePAAdsBookingModal(){document.getElementById('pa-ads-bookingModal')
 window.openPAAdsBookingModal=openPAAdsBookingModal;
 window.togglePAPhase=function(el){const items=el.closest('.phase-accordion').querySelectorAll('.phase-item');const wasActive=el.classList.contains('active');items.forEach(i=>i.classList.remove('active'));if(!wasActive)el.classList.add('active')};
 // Auto-open first phase
-const paFirstPhase=document.querySelector('.pa-ads-landing .phase-item');if(paFirstPhase)paFirstPhase.classList.add('active');
+if(window.innerWidth>768){const paFirstPhase=document.querySelector('.pa-ads-landing .phase-item');if(paFirstPhase)paFirstPhase.classList.add('active');}
 window.closePAAdsBookingModal=closePAAdsBookingModal;
 document.getElementById('pa-ads-bookingModal').addEventListener('click',function(e){if(e.target===this)closePAAdsBookingModal()});
 

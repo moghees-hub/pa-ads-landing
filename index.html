@@ -597,7 +597,7 @@ body{background:var(--white);color:var(--text);font-family:'Inter',sans-serif;fo
 <script>
 function openBookingModal(){document.getElementById('bookingModal').classList.add('active');document.body.style.overflow='hidden'}
 function togglePhase(el){const items=el.closest('.phase-accordion').querySelectorAll('.phase-item');const wasActive=el.classList.contains('active');items.forEach(i=>i.classList.remove('active'));if(!wasActive)el.classList.add('active')}
-document.addEventListener('DOMContentLoaded',function(){const firstPhase=document.querySelector('.phase-item');if(firstPhase)firstPhase.classList.add('active')})
+document.addEventListener('DOMContentLoaded',function(){if(window.innerWidth>768){const firstPhase=document.querySelector('.phase-item');if(firstPhase)firstPhase.classList.add('active')}})
 function closeBookingModal(){document.getElementById('bookingModal').classList.remove('active');document.body.style.overflow=''}
 document.getElementById('bookingModal').addEventListener('click',function(e){if(e.target===this)closeBookingModal()});
 
