@@ -119,6 +119,25 @@ body .content-wrapper * {
 .pa-ads-landing .transform-card:hover img{transform:scale(1.04)}
 .pa-ads-landing .transform-card__name{padding:10px 14px;font-size:12px;font-weight:700;text-align:center;border-top:1px solid var(--border)}
 
+/* CLIENT STORIES CAROUSELS */
+.pa-ads-landing .stories-section{background:var(--light);padding:50px 0;border-top:1px solid var(--border)}
+.pa-ads-landing .stories-section h2{font-size:clamp(26px,4.5vw,48px);font-weight:900;letter-spacing:-.025em;color:var(--text);line-height:1.05}
+.pa-ads-landing .stories-section h2 span{color:var(--green-dark)}
+.pa-ads-landing .stories-section p{font-size:16px;color:#000;font-weight:700;margin-top:12px}
+.pa-ads-landing .stories-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:28px;max-width:880px;margin:40px auto 0;padding:0 20px}
+.pa-ads-landing .story-carousel{background:var(--white);border:1px solid var(--border);border-radius:16px;overflow:hidden;box-shadow:0 8px 30px rgba(0,0,0,0.06)}
+.pa-ads-landing .story-viewport{position:relative;aspect-ratio:3/4;background:#000;overflow:hidden;touch-action:pan-y}
+.pa-ads-landing .story-track{display:flex;height:100%;transition:transform .4s cubic-bezier(.4,0,.2,1)}
+.pa-ads-landing .story-slide{min-width:100%;height:100%}
+.pa-ads-landing .story-slide img{width:100%;height:100%;object-fit:cover;display:block}
+.pa-ads-landing .story-nav{position:absolute;top:50%;transform:translateY(-50%);width:40px;height:40px;border:none;border-radius:50%;background:rgba(0,0,0,0.45);color:#fff;font-size:22px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s;z-index:2;padding:0}
+.pa-ads-landing .story-nav:hover{background:rgba(0,0,0,0.72)}
+.pa-ads-landing .story-nav--prev{left:12px}
+.pa-ads-landing .story-nav--next{right:12px}
+.pa-ads-landing .story-dots{position:absolute;bottom:14px;left:0;right:0;display:flex;justify-content:center;gap:7px;z-index:2}
+.pa-ads-landing .story-dot{width:8px;height:8px;border-radius:50%;border:none;background:rgba(255,255,255,0.5);cursor:pointer;padding:0;transition:background .2s,transform .2s}
+.pa-ads-landing .story-dot.active{background:var(--green);transform:scale(1.3)}
+
 /* GUARANTEE */
 .pa-ads-landing .guarantee{background:var(--light);padding:50px 0;text-align:center;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
 .pa-ads-landing .guarantee .container{max-width:700px;margin:0 auto;padding:0 20px}
@@ -236,6 +255,8 @@ body .content-wrapper * {
   .pa-ads-landing .testi-scroll{grid-template-columns:repeat(2,1fr);gap:12px;padding:32px 15px 15px}
   .pa-ads-landing .testi-card{min-width:0}
   .pa-ads-landing .transform-grid{grid-template-columns:repeat(2,1fr)}
+  .pa-ads-landing .stories-section{padding:32px 0}
+  .pa-ads-landing .stories-grid{grid-template-columns:1fr;max-width:420px;gap:24px;margin-top:28px}
   .pa-ads-landing .top-bar{gap:10px}
   .pa-ads-landing .top-bar__text{font-size:11px}
   .pa-ads-landing .booking-modal{width:95%;max-height:85vh}
@@ -313,47 +334,21 @@ body .content-wrapper * {
     </div>
   </div>
 
-  <!-- EXCUSES -->
-  <div class="excuses">
-    <div class="container" data-reveal>
-      <div class="excuses__badge">Sound Familiar?</div>
-      <h2>Your Excuses Are Valid. <br><em>They Just Aren't Good Enough</em></h2>
-      <div class="excuse-grid">
-        <div class="excuse-card">
-          <div class="excuse-card__img" onclick="openPAAdsExcuseImg(this)"><img src="https://physique-academy.s3.amazonaws.com/landing-pages/ross.webp" alt="Ross transformation" loading="lazy"></div>
-          <div class="excuse-card__text">
-            <p><strong>Ross 45,</strong> was <span style="color:#e74c3c;font-weight:700;font-size:16px">raising two kids alone and caring for his father through late-stage Parkinson's.</span></p>
-            <p>Most men would have come up with plenty of excuses in this situation. Ross used it as a reason.</p>
-            <p><strong style="color:#2ecc40">He lost 50lbs</strong>.</p>
-          </div>
-        </div>
-        <div class="excuse-card">
-          <div class="excuse-card__img" onclick="openPAAdsExcuseImg(this)"><img src="https://physique-academy.s3.amazonaws.com/landing-pages/johnathan.webp" alt="Johnathan transformation" loading="lazy"></div>
-          <div class="excuse-card__text">
-            <p><strong>Jonathan</strong> hadn't looked at <span style="color:#e74c3c;font-weight:700;font-size:16px">himself in the mirror with his shirt off in over 4 years.</span></p>
-            <p>It was costing him his confidence, his ambition, and parts of his life he'd quietly stopped pursuing.</p>
-            <p><strong style="color:#2ecc40">He lost 49lbs</strong>. He got it all back.</p>
-          </div>
-        </div>
-        <div class="excuse-card">
-          <div class="excuse-card__img" onclick="openPAAdsExcuseImg(this)"><img src="https://physique-academy.s3.amazonaws.com/landing-pages/sean.webp" alt="Sean transformation" loading="lazy"></div>
-          <div class="excuse-card__text">
-            <p><strong>Sean 46,</strong> had been <span style="color:#e74c3c;font-weight:700;font-size:16px">consistently training for 13 years but had nothing to show for it.</span></p>
-            <p>Despite being a father of 3 kids and working long hours on his business.</p>
-            <p><strong style="color:#2ecc40">He lost 58lbs</strong>.</p>
-          </div>
-        </div>
-        <div class="excuse-card">
-          <div class="excuse-card__img" onclick="openPAAdsExcuseImg(this)"><img src="https://physique-academy.s3.amazonaws.com/landing-pages/marc.webp" alt="Marc transformation" loading="lazy"></div>
-          <div class="excuse-card__text">
-            <p><strong>Marc 53,</strong> <span style="color:#e74c3c;font-weight:700;font-size:16px">thought it was his age and hadn't run a single mile in his life.</span></p>
-            <p>Six months later and he placed 3rd in his age group at a 5K and also completed a half marathon.</p>
-            <p><strong style="color:#2ecc40">He lost 45lbs</strong>.</p>
-          </div>
-        </div>
-      </div>
+  <!-- CLIENT STORIES CAROUSELS -->
+  <section class="stories-section">
+    <div style="text-align:center;padding:0 20px" data-reveal>
+      <h2>Real Men. <span>Real Stories.</span></h2>
+      <p>Swipe through how busy men just like you transformed, step by step.</p>
     </div>
-  </div>
+    <div class="stories-grid" data-reveal>
+      <div class="story-carousel" data-story="sean"></div>
+      <div class="story-carousel" data-story="michael"></div>
+      <div class="story-carousel" data-story="paul"></div>
+      <div class="story-carousel" data-story="craig"></div>
+      <div class="story-carousel" data-story="djmichael"></div>
+      <div class="story-carousel" data-story="ronan"></div>
+    </div>
+  </section>
 
   <!-- GUARANTEE -->
   <div class="guarantee">
@@ -591,5 +586,31 @@ document.addEventListener('keydown',e=>{
   if(document.getElementById('pa-ads-lightbox').style.display!=='flex')return;
   if(e.key==='Escape')window.closePAAdsLightbox();if(e.key==='ArrowRight')window.nextPAAdsImage();if(e.key==='ArrowLeft')window.prevPAAdsImage()
 });
+
+/* CLIENT STORIES CAROUSELS */
+(function(){
+  const STORY_BASE='https://physique-academy.s3.amazonaws.com/carousels/';
+  const STORY_COUNT=7;
+  document.querySelectorAll('.pa-ads-landing .story-carousel').forEach(function(car){
+    const slug=car.dataset.story;let idx=0;
+    let track='<div class="story-track">';
+    for(let n=1;n<=STORY_COUNT;n++){track+='<div class="story-slide"><img src="'+STORY_BASE+'story-'+slug+'-'+n+'.webp" alt="Client transformation story" loading="lazy"></div>';}
+    track+='</div>';
+    let dots='<div class="story-dots">';
+    for(let n=0;n<STORY_COUNT;n++){dots+='<button class="story-dot" data-i="'+n+'" aria-label="Slide '+(n+1)+'"></button>';}
+    dots+='</div>';
+    car.innerHTML='<div class="story-viewport">'+track+'<button class="story-nav story-nav--prev" aria-label="Previous">&#8249;</button><button class="story-nav story-nav--next" aria-label="Next">&#8250;</button>'+dots+'</div>';
+    const trackEl=car.querySelector('.story-track');const dotEls=car.querySelectorAll('.story-dot');
+    function go(i){idx=(i+STORY_COUNT)%STORY_COUNT;trackEl.style.transform='translateX(-'+(idx*100)+'%)';dotEls.forEach(function(d,k){d.classList.toggle('active',k===idx)});}
+    car.querySelector('.story-nav--prev').addEventListener('click',function(){go(idx-1)});
+    car.querySelector('.story-nav--next').addEventListener('click',function(){go(idx+1)});
+    dotEls.forEach(function(d){d.addEventListener('click',function(){go(+d.dataset.i)})});
+    let sx=0,dxv=0,drag=false;const vp=car.querySelector('.story-viewport');
+    vp.addEventListener('touchstart',function(e){sx=e.touches[0].clientX;dxv=0;drag=true},{passive:true});
+    vp.addEventListener('touchmove',function(e){if(drag)dxv=e.touches[0].clientX-sx},{passive:true});
+    vp.addEventListener('touchend',function(){if(drag&&Math.abs(dxv)>40)go(dxv<0?idx+1:idx-1);drag=false});
+    go(0);
+  });
+})();
 })();
 </script>
